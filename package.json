@@ -1,0 +1,23 @@
+{
+  "name": "rajdhani-js",
+  "version": "1.0.0",
+  "description": "Rajdhani JS is a library to create a HTTP server with features to handle GET and POST requests.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello World!\" && exit 1",
+    "dev": "tsc && node dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/24kaushik/Rajdhani-JS.git"
+  },
+  "author": "Kaushik Sarkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/24kaushik/Rajdhani-JS/issues"
+  },
+  "homepage": "https://github.com/24kaushik/Rajdhani-JS#readme",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
