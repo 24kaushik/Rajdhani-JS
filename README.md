@@ -1,4 +1,6 @@
 <h1 align="center">🚧Under Construction🚧</h1>
+<img src="./logo.png" align="center">
+<hr>
 
 # RajdhaniJS
 
