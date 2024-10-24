@@ -18,7 +18,8 @@ class App {
 
       socket.on("error", (err) => {
         console.error(err);
-        //TODO: Throw error
+        //TODO: Uncomment the line below
+        // throw err;
       });
 
       socket.on("end", () => {
@@ -32,15 +33,29 @@ class App {
     this.router.get(path, handler);
   }
 
+  post(path: string, handler: (req: myResponse, res: myResponse) => any) {
+    this.router.post(path, handler);
+  }
+
   private handleRequest(data: Buffer, socket: net.Socket) {
     const request = data.toString();
     const [requestLine] = request.split("\r\n");
     const [method, path] = requestLine.split(" ");
 
-    if (method === "GET" && this.router.findRoute(path) !== undefined) {
+    if (method === "GET" && this.router.findRoute(path)?.GET !== undefined) {
       const req = requestParser(request);
       const res = createResponse(socket);
-      const func = this.router.findRoute(path);
+      const func = this.router.findRoute(path).GET;
+      if (func !== undefined) {
+        func(req, res);
+      }
+    } else if (
+      method === "POST" &&
+      this.router.findRoute(path)?.GET !== undefined
+    ) {
+      const req = requestParser(request);
+      const res = createResponse(socket);
+      const func = this.router.findRoute(path).POST;
       if (func !== undefined) {
         func(req, res);
       }

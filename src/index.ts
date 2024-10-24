@@ -10,6 +10,10 @@ server.get("/ks", (_, res) => {
   res.end("Hello Kaushik!");
 });
 
+server.post("/", (req, res) => {
+  res.end(`${JSON.stringify(req.headers)}`);
+});
+
 server.listen(3000, "localhost");
 // --------------------------------------------------------------------------- //
 

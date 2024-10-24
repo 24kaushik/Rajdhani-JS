@@ -1,11 +1,21 @@
 export class Router {
-  private routes: { [key: string]: Function } = {};
+  private routes: { [key: string]: { [key: string]: Function } } = {};
 
   get(path: string, handler: Function) {
-    this.routes[path] = handler;
+    if (!this.routes[path]) {
+      this.routes[path] = {};
+    }
+    this.routes[path]["GET"] = handler;
   }
 
-  findRoute(path: string): Function | undefined {
+  post(path: string, handler: Function) {
+    if (!this.routes[path]) {
+      this.routes[path] = {};
+    }
+    this.routes[path]["POST"] = handler;
+  }
+
+  findRoute(path: string): { [key: string]: Function } {
     return this.routes[path];
   }
 }
