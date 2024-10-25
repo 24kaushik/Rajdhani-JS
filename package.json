@@ -2,10 +2,10 @@
   "name": "rajdhani-js",
   "version": "1.0.0",
   "description": "Rajdhani JS is a library to create a HTTP server with features to handle GET and POST requests.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Hello World!\" && exit 1",
-    "dev": "tsc && node dist/index.js"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
