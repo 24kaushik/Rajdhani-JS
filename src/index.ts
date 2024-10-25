@@ -9,6 +9,9 @@ server.get("/", (_, res) => {
 server.get("/ks", (_, res) => {
   res.end("Hello Kaushik!");
 });
+server.get("/json", (_, res) => {
+  res.json({a:1, b:2, c:3});
+});
 
 server.post("/", (req, res) => {
   res.end(`${JSON.stringify(req.headers)}`);

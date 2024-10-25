@@ -10,14 +10,14 @@ function objectToHeaders(headersObj: { [key: string]: string }, body:string): st
   return headersString;
 }
 
-// function headersToObject(headers: string): { [key: string]: string } {
-//   return headers
-//     .split("\r\n")
-//     .reduce((acc: { [key: string]: string }, header: string) => {
-//       const [key, value] = header.split(": ");
-//       acc[key] = value;
-//       return acc;
-//     }, {});
-// }
+function headersToObject(headers: string): { [key: string]: string } {
+  return headers
+    .split("\r\n")
+    .reduce((acc: { [key: string]: string }, header: string) => {
+      const [key, value] = header.split(": ");
+      acc[key] = value;
+      return acc;
+    }, {});
+}
 
 export { objectToHeaders };
