@@ -1,6 +1,9 @@
-function objectToHeaders(headersObj: { [key: string]: string }, body:string): string {
+function objectToHeaders(
+  headersObj: { [key: string]: string },
+  body: string
+): string {
   let headersString = "";
-  headersObj["Content-Length"] = body.length.toString();
+  headersObj["Content-Length"] = body ? body.length.toString() : "0";
   for (const key in headersObj) {
     if (headersObj.hasOwnProperty(key)) {
       headersString += `${key}: ${headersObj[key]}\r\n`;
