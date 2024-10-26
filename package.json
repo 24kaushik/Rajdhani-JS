@@ -1,6 +1,6 @@
 {
   "name": "rajdhani-js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Rajdhani JS is a library to create a HTTP server with features to handle GET and POST requests.",
   "main": "dist/index.js",
   "scripts": {
