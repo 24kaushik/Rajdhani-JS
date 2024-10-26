@@ -17,16 +17,12 @@ class App {
       });
 
       socket.on("error", (err) => {
-        console.error(err);
-        //TODO: Uncomment the line below
-        // throw err;
+        throw err;
       });
 
       socket.on("end", () => {
-        console.log("Client disconnected");
       });
     });
-    console.log("Server created");
   }
 
   get(path: string, handler: (req: myResponse, res: myResponse) => any) {
@@ -65,10 +61,8 @@ class App {
     }
   }
 
-  listen(port: number, hostname: string) {
-    this.server.listen(port, hostname, () => {
-      console.log(`Server listening on ${hostname}:${port}`);
-    });
+  listen(port: number, hostname: string, callback: (() => void) | undefined) {
+    this.server.listen(port, hostname, callback ? callback : () => {});
   }
 }
 

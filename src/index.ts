@@ -1,3 +1,9 @@
-import App from './server';
+import App from "./server";
+import { myRequest } from "./request/request";
+import { myResponse } from "./response/response";
 
-export = App;
+const Rajdhani = () => {
+  return new App();
+};
+
+export = Rajdhani;
