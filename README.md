@@ -3,7 +3,7 @@
 
 # RajdhaniJS
 
-RajdhaniJS is a basic Express.js clone with features to handle basic GET and POST requests. It supports accessing headers and body in both request and response, and includes TypeScript support.
+RajdhaniJS is a basic Express.js clone which implements HTTP from ground up over tcp with features to handle basic GET and POST requests. It supports accessing headers and body in both request and response, and includes TypeScript support.
 
 ## Features
 
